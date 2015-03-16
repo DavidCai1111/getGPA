@@ -12,7 +12,7 @@ casper.start("http://jwc1.usst.edu.cn",function(res){
 
 casper.then(function(){
     this.capture("layout.jpg");
-    this.captureSelector('yzm.jpg','dd img[src="CheckCode.aspx"]',{
+    this.captureSelector('checkCode.jpg','dd img[src="CheckCode.aspx"]',{
         quality:100
     });
 });

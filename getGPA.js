@@ -8,5 +8,7 @@ execSync('casperjs LoginAndGetGPA.js');
 
 execSync('java MyImgFilter');
 
+execSync('tesseract checkCodeFiltered.jpg result');
+
 console.log("end!");
 
