@@ -1,0 +1,13 @@
+{
+  "name": "getGPA",
+  "version": "1.0.0",
+  "description": "get GPA",
+  "main": "getGPA.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DavidCai",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
