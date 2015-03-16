@@ -12,6 +12,13 @@ dist/
 # Logs
 logs
 .idea
+layout.jpg
+yzm.jpg
+result.txt
+checkCode.jpg
+checkCodeFiltered.jpg
+before.jpg
+afterAll.jpg
 
 # Runtime data
 pids
