@@ -27,8 +27,8 @@ casper.waitFor(function check() {
     console.log(checkCode);
 
     this.fill('form#form1',{
-        'TextBox1':'1213490138',
-        'TextBox2':'c65655650',
+        'TextBox1':'?',
+        'TextBox2':'?',
         'TextBox3':checkCode
     },false);
 
