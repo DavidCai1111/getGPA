@@ -2,10 +2,10 @@
 无需验证码，上海理工大学学生绩点查询 
 
 ###运行:
-    C:\xxx\xxx>node getGPA.js 教务系统用户名 密码
+    C:\xxx\xxx>node getGPA.js 学号 密码
 
     输出:
-    [getGPA] 输入的用户名为：12121212
+    [getGPA] 输入的学号为：12121212
     [getGPA] 输入的密码为：12121212
     [getGPA] 开始登录!
     [getGPA] 登录中...
