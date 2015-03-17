@@ -8,7 +8,7 @@ if((process.argv.length - 2) !== 2  ){
     process.exit(1);
 }
 
-console.log("[getGPA] 输入的用户名为：" +  process.argv[2]);
+console.log("[getGPA] 输入的学号为：" +  process.argv[2]);
 console.log("[getGPA] 输入的密码为：" +  process.argv[3]);
 
 //保存用户名密码
