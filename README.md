@@ -17,5 +17,5 @@
     |-- casperjs登录教务系统,截取验证码图像
     |-- MyImgFilter.java进行图像预处理
     |-- tesseract分析输出验证码文本
-    |-- casperjs进入绩点界面，进入其iframe，获取GPA
+    |-- casperjs进行登录，进入绩点界面，进入其iframe，获取GPA
     |-- 利用node对各过程进行粘合，调度，并在分析错误时循环尝试
