@@ -2,11 +2,12 @@
 无需验证码，上海理工大学学生绩点查询 
 
 ###运行:
-    C:\xxx\xxx>node getGPA.js 学号 密码
+    node getGPS.js 学号 密码
 
     输出:
-    [getGPA] 输入的学号为：12121212
-    [getGPA] 输入的密码为：12121212
+    C:\>node getGPA.js 111111 222222
+    [getGPA] 输入的学号为：111111
+    [getGPA] 输入的密码为：222222
     [getGPA] 开始登录!
     [getGPA] 登录中...
     [getGPA] 登录成功,开始获取平均学分绩点...
