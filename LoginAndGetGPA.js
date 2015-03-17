@@ -2,13 +2,8 @@ var casper = require("casper").create({
     verbose: true,
     logLevel:"info",
     onAlert:function(self,msg){
-        if(fs.exists("alertedMessage.txt")){
-            fs.remove("alertedMessage.txt");
-        }
         fs.touch("alertedMessage.txt");
         fs.write("alertedMessage.txt",msg);
-        console.log("alert: " + msg);
-
     }
 });
 var utils = require("utils");
@@ -52,17 +47,24 @@ casper.then(function(){
 });
 
 casper.then(function(){
-    this.capture("afterAll.jpg");
     fs.touch("result.txt");
     if(this.exists('#Label3')){
         fs.write('result.txt','success');
     }else{
         fs.write('result.txt','fail');
+        this.bypass(2);
     }
 });
 
 casper.then(function(){
-    console.log(this.getCurrentUrl());
+    this.clickLabel('绩点表(二专课程不计入任选课程)','a');
+});
+
+casper.withFrame('zhuti', function() {
+    var GPA = this.getHTML("#Td2");
+
+    fs.touch("GPA.txt");
+    fs.write("GPA.txt",GPA);
 });
 
 casper.run(function(){
