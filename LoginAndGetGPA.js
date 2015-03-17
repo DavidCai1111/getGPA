@@ -1,14 +1,26 @@
 var casper = require("casper").create({
     verbose: true,
-    logLevel:"info"
+    logLevel:"info",
+    onAlert:function(self,msg){
+        if(fs.exists("alertedMessage.txt")){
+            fs.remove("alertedMessage.txt");
+        }
+        fs.touch("alertedMessage.txt");
+        fs.write("alertedMessage.txt",msg);
+        console.log("alert: " + msg);
+
+    }
 });
 var utils = require("utils");
 var fs = require("fs");
+var system = require("system");
 
-console.log(" ");
+var user = {
+    username:system.args[4],
+    password:system.args[5]
+};
 
 casper.start("http://jwc1.usst.edu.cn",function(res){
-    utils.dump(res);
     this.capture("layout.jpg");
 });
 
@@ -18,7 +30,6 @@ casper.then(function(){
     });
 });
 
-
 casper.waitFor(function check() {
     return fs.exists('checkCodeText.txt');
 }, function then() {
@@ -27,8 +38,8 @@ casper.waitFor(function check() {
     console.log(checkCode);
 
     this.fill('form#form1',{
-        'TextBox1':'?',
-        'TextBox2':'?',
+        'TextBox1':user.username,
+        'TextBox2':user.password,
         'TextBox3':checkCode
     },false);
 
