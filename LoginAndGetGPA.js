@@ -20,9 +20,9 @@ casper.then(function(){
 
 
 casper.waitFor(function check() {
-    return fs.exists('result.txt');
+    return fs.exists('checkCodeText.txt');
 }, function then() {
-    var checkCode = fs.read('result.txt').trim();
+    var checkCode = fs.read('checkCodeText.txt').trim();
     console.log("checkCode: ");
     console.log(checkCode);
 
@@ -42,6 +42,12 @@ casper.then(function(){
 
 casper.then(function(){
     this.capture("afterAll.jpg");
+    fs.touch("result.txt");
+    if(this.exists('#Label3')){
+        fs.write('result.txt','success');
+    }else{
+        fs.write('result.txt','fail');
+    }
 });
 
 casper.then(function(){
