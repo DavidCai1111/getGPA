@@ -1,13 +1,31 @@
 {
-  "name": "getGPA",
+  "name": "get-gpa",
   "version": "1.0.0",
-  "description": "get GPA",
+  "description": "无需网页验证码登录，上海理工大学学生绩点自动查询",
   "main": "getGPA.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "node",
+    "GPA",
+    "USST"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidCai1993/getGPA"
+  },
   "author": "DavidCai",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "casperjs": "^1.1.0-beta3",
+    "phantomjs": "^1.9.16"
+  },
+  "bugs": {
+    "url": "https://github.com/DavidCai1993/getGPA/issues"
+  },
+  "homepage": "https://github.com/DavidCai1993/getGPA",
+  "directories": {
+    "test": "test"
   }
 }
