@@ -19,6 +19,9 @@ var userToLogin = {
 
 console.log("[getGPA] 开始登录!");
 
+//进入lib目录
+process.chdir('lib');
+
 function getGPA(){
     //删除残留通信文件
     if(fs.existsSync("result.txt")){
@@ -29,6 +32,9 @@ function getGPA(){
     }
     if(fs.existsSync("layout.jpg")){
         fs.unlinkSync("layout.jpg");
+    }
+    if(fs.existsSync("before.jpg")){
+        fs.unlinkSync("before.jpg");
     }
     if(fs.existsSync("checkCode.jpg")){
         fs.unlinkSync("checkCode.jpg");
@@ -42,6 +48,7 @@ function getGPA(){
     if(fs.existsSync("alertedMessage.txt")){
         fs.unlinkSync("alertedMessage.txt");
     }
+
 
     //执行登录
     exec(('casperjs LoginAndGetGPA.js '+ userToLogin.username + " " + userToLogin.password ),function(){
@@ -63,6 +70,9 @@ function getGPA(){
             }
             if(fs.existsSync("layout.jpg")){
                 fs.unlinkSync("layout.jpg");
+            }
+            if(fs.existsSync("before.jpg")){
+                fs.unlinkSync("before.jpg");
             }
             if(fs.existsSync("checkCode.jpg")){
                 fs.unlinkSync("checkCode.jpg");
