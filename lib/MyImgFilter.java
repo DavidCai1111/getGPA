@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.awt.image.*;
 import java.awt.geom.AffineTransform;
@@ -9,6 +8,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.awt.Toolkit;
 import java.awt.Image;
+
 public class MyImgFilter {
     BufferedImage image;
     private int iw, ih;
@@ -182,6 +182,7 @@ public class MyImgFilter {
     {
         return image;
     }
+
     public static void main(String[] args) throws IOException {
         FileInputStream fin=new FileInputStream("checkCode.jpg");
         BufferedImage bi=ImageIO.read(fin);
@@ -193,5 +194,6 @@ public class MyImgFilter {
         File file = new File("checkCodeFiltered.jpg");
         ImageIO.write(bi, "jpg", file);
     }
+
 }
 
